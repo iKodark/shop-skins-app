@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { HiShoppingCart } from 'react-icons/hi';
 import { skins } from '@mocks';
 import router from "../lib/router";
@@ -7,7 +8,7 @@ export default function Home() {
   return (
     <>
       <div className="px-5">
-        <img src="/banner.webp" />
+        <Image className="w-full h-auto" width={2000} height={2000} src="/banner.webp" alt="banner" />
       </div>
       <div className="flex px-2">
         <div className="flex flex-wrap">
@@ -23,7 +24,7 @@ export default function Home() {
             skins.map(skin => (
               <div key={skin.id} className="flex-none px-3 py-3 w-full h-auto lg:w-1/6 md:w-1/4 sm:w-full">
                 <div className="flex items-center justify-between flex-col w-full h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 shadow-lg shadow-violet-500/50 rounded-md p-2">
-                  <img src={skin.image} />
+                  <Image className="w-full h-auto" width={2000} height={2000} src={skin.image} alt={skin.name} />
                   <div className="flex flex-col w-full gap-2 break-words">
                     <span className="text-white text-center font-semibold text-sm">{skin.name}</span>
                     <span className="text-white text-center font-bold">{skin.price}</span>
